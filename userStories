@@ -1,20 +1,23 @@
 User Stories
 
-1. Make the game Work
-	Place Boats 
-	Shoot and give hit/miss results
-	Give win/loss and shots fired at end of game
+1. Make the game Work --5hrs total
+        Build board --1hr
+	Place Boats --2hr
+	Shoot and give hit/miss results --30min
+	Give win/loss and shots fired at end of game --30min 
 	
-2. Multi-player pass and play
-3. Gui- shots and your ships
-4. Preset ship locations 
-5. Custom ship Loadouts/ weapon loadouts
-6. Leaderboard
-7. Story of Shame (long text story for losing player)
-8. Different boards (diff ocean maps)
-9. Ram/ Self destruct option
-10. Sound effects
-11. online
-12. Animations
-13. Custom skins for the boats
+2. Multi-player pass and play --1-2hrs
+3. Gui- shots and your ships/cleaner terminal layout --1hr
+4. Preset ship locations- 1hr
+5. Custom ship Loadouts/ weapon loadouts --2-3hrs
+6. Leaderboard --30min
+7. World outcome story (different text story depending on 
+       How the game was played, I.E. if one player gets 
+       obliterated then it tells a story about that) --30min
+8. Different boards (different ocean maps, I.E. a rock/dead
+       Space in a random section of the board) --1hr
+9. Ram/ Self destruct option 2-3hr
+10. Sound effects- gun blast, splash, hit explosion 2hrs
+11. Online capabilities 2hrs
 
+Done in C++
