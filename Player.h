@@ -7,19 +7,24 @@
 #include "Player.h"
 #include "Battleship.h"
 #include <string>
+#include <vector>
 
 class Player {
 public:
 
-    Player();
-    Player(std::string) ;
+    Player(int, std::vector<int>);
 
-    void SetShips();
+    Player(std::string, int, std::vector<int>);
+
+    void SetShips(std::vector<int>);
+
+    void PlaceShip(int);
 
 private:
     std::string _playerName;
-
-
+    std::vector<std::pair<int,int>> _allShipLocations;
+    int _boardSize;
+    std::vector<int> _allShipHealth;
 };
 
 

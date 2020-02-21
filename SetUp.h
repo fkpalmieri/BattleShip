@@ -13,22 +13,28 @@
 
 class SetUp {
 public:
-    SetUp ();
+    SetUp();
 
-    static void WelcomeScreen ();
+    void WelcomeScreen();
 
     void GameSettings();
 
     void ChangeBoardSize(int);
 
+    void ShipTypes();
+
     int GetBoardSize();
 
     std::vector<std::string> GetPlayerName();
+
+    std::vector<int> GetShipTypes();
 
     void SetPlayerName();
 private:
     int _boardSize;
     std::vector<std::string> _playerNames;
+    std::vector<int> _shipSizes;
+
 };
 
 

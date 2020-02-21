@@ -12,15 +12,12 @@ class Battleship {
 public:
     Battleship();
 
-    void ChangeBoard(int);
-
-    int GetBoard();
-
 private:
     int _board;
     std::vector<std::string> _playerNames;
     std::string _player1name;
     std::string _player2name;
+    std::vector<int> _shipSizes;
 };
 
 
