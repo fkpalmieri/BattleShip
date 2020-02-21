@@ -1,8 +1,11 @@
+// Main.cpp
+// Created by Cody Abad and Keegan Palmieri
+// CS 372 Software Construction
+
+
 #include <iostream>
 #include "Battleship.h"
-#include "Player.h"
 #include "Grid.h"
-#include "Ship.h"
 
 int main() {
     Battleship game;

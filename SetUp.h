@@ -1,12 +1,11 @@
-//
-// Created by keeganpalmieri on 2/19/20.
-//
+// SetUp.hpp
+// Created by Cody Abad and Keegan Palmieri
+// CS 372 Software Construction
 
 #ifndef BATTLESHIP_SETUP_H
 #define BATTLESHIP_SETUP_H
 
 #include "Battleship.h"
-#include "Player.h"
 #include "Grid.h"
 #include <iostream>
 #include <vector>
@@ -20,19 +19,11 @@ public:
 
     void GameSettings();
 
-    void ChangeBoardSize(int);
-
     void placeShip(Grid &,int,string);
-
-    void ShipTypes();
-
-    int GetBoardSize();
 
     Grid returnGrid(int);
 
     std::vector<std::string> GetPlayerName();
-
-    std::vector<int> GetShipTypes();
 
     void SetPlayerName();
 

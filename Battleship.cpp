@@ -1,6 +1,6 @@
-//
-// Created by keeganpalmieri on 2/19/20.
-//
+// Battleship.cpp
+// Created by Cody Abad and Keegan Palmieri
+// CS 372 Software Construction
 
 #include "Battleship.h"
 
@@ -13,12 +13,9 @@ Battleship::Battleship(){
      auto playerNames = Base.GetPlayerName();
     _player1name = playerNames[0];
     _player2name = playerNames[1];
-   // _shipSizes = Base.GetShipTypes();
 
     _player1 = Base.returnGrid(1);
     _player2 = Base.returnGrid(2);
-    //Player Player1(_player1name, Base._player1, _shipSizes);
-    //Player Player2(_player2name, _board, _shipSizes);
 
 }
 
@@ -34,8 +31,9 @@ void Battleship::Screen2() {
 
 void Battleship::Turn1() {
     cout << _player1name << endl;
-    _player2.opponentBoard();
-    _player1.printBoard();
+
+    Screen1();
+
     std::pair<int, int> coords = input();
     bool Hit = true;
     while (Hit) {
@@ -64,8 +62,8 @@ void Battleship::Turn1() {
 
 void Battleship::Turn2(){
     cout << _player2name << endl;
-    _player1.opponentBoard();
-    _player2.printBoard();
+    Screen2();
+
     std::pair<int, int> coords = input();
     bool Hit = true;
     while (Hit) {
