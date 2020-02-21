@@ -93,12 +93,15 @@ void Battleship::Turn2(){
 std::pair<int, int> Battleship::input(){
     int x;
     int y;
+    char a;
     cout << "enter x coord:";
-    std::cin >> x;
+    std::cin >> a;
     cout << endl;
     cout << "enter y coord:";
     std::cin >> y;
     cout << endl;
+    y--;
+    x = a - 65;
     return std::pair<int, int>(x,y);
 }
 
