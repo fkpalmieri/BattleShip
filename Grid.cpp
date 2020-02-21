@@ -1,4 +1,4 @@
-//Grid.cpp
+﻿//Grid.cpp
 //Cody Abad & Keegan Palmieri
 //CS 372 Spring 2020
 //Implementation for Grid class
@@ -19,7 +19,7 @@ Grid::Grid(int x) : _board(x){
 
 
 Grid::Grid(int x, int y) : _board(y){
-	for (int i = 0; i < x; i++) {
+	for (int i = 0; i < y; i++) {
 		_board[i] = vector<int>(x);
 	}
 }
@@ -46,5 +46,39 @@ string Grid::checkCoord(int x,int y){
 		return "MISS";
 	default:
 		return "ERROR";
+	}
+}
+
+void Grid::printBoard() {
+	cout << "  ";
+	for (int i = 0; i < _board[0].size(); i++) {
+		cout << " " << static_cast<char>('A' + i) << " ";
+	}
+	cout << endl;
+	for (int i = 0; i < _board.size(); i++) {
+		cout << i+1;
+		if (i < 9)
+			cout << " ";
+		for (int j = 0; j < _board[0].size(); j++) {
+			switch (_board[i][j]) {
+			case(0):
+				cout << "|_|";
+				break;
+			case(1):
+				cout << "|B|";
+				break;
+			case(2):
+				cout << "|X|";
+				break;
+			case(3):
+				cout << "|O|";
+				break;
+			default:
+				cout << "|_|";
+				break;
+			}
+			
+		}
+		cout << endl;
 	}
 }
