@@ -6,21 +6,21 @@
 #define BATTLESHIP_SHIP_H
 
 #include "Battleship.h"
-
+#include "Grid.h"
 
 class Ship {
 public:
     Ship();
 
-    void PlaceAircraftCarrier();
+    void PlaceAircraftCarrier(Grid);
 
-    void PlaceBattleship();
+    void placeShip(Grid &,int);
 
-    void PlaceCruiser();
+    void PlaceCruiser(Grid);
 
-    void PlaceSubmarine();
+    void PlaceSubmarine(Grid);
 
-    void PlaceDestroyer();
+    void PlaceDestroyer(Grid);
 
 private:
 

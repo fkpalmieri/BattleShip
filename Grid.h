@@ -39,6 +39,10 @@ public:
 	//Returns width and height in the form "WIDTHxHEIGHT"
 	string boardSize();
 
+	int getHeight();
+
+	int getWidth();
+
 	//x and y chooses a coordinate, s is what that coordinate becomes
 	void changeCoord(int x,int y,int s);
 

@@ -30,6 +30,14 @@ string Grid::boardSize(){
 	return result;
 }
 
+int Grid::getHeight(){
+	return _board.size();
+}
+
+int Grid::getWidth(){
+	return _board[0].size();
+}
+
 void Grid::changeCoord(int x, int y, int s) {
 	_board[y][x] = s;
 };
@@ -44,6 +52,8 @@ string Grid::checkCoord(int x,int y){
 		return "HIT";
 	case 3:
 		return "MISS";
+	case 4:
+		return "OVERLAP";
 	default:
 		return "ERROR";
 	}
@@ -72,6 +82,9 @@ void Grid::printBoard() {
 				break;
 			case(3):
 				cout << "|O|";
+				break;
+			case(4):
+				cout << "|V|";
 				break;
 			default:
 				cout << "|_|";
