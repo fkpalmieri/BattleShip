@@ -33,6 +33,7 @@ void Battleship::Screen2() {
 }
 
 void Battleship::Turn1() {
+    cout << _player1name << endl;
     _player2.opponentBoard();
     _player1.printBoard();
     std::pair<int, int> coords = input();
@@ -62,6 +63,7 @@ void Battleship::Turn1() {
 }
 
 void Battleship::Turn2(){
+    cout << _player2name << endl;
     _player1.opponentBoard();
     _player2.printBoard();
     std::pair<int, int> coords = input();
