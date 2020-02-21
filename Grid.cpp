@@ -42,20 +42,20 @@ void Grid::changeCoord(int x, int y, int s) {
 	_board[y][x] = s;
 };
 
-string Grid::checkCoord(int x,int y){
+int Grid::checkCoord(int x,int y){
 	switch (_board[y][x]) {
 	case 0:
-		return "EMPTY";
+		return 0;
 	case 1:
-		return "BOAT";
+		return 1;
 	case 2:
-		return "HIT";
+		return 3;
 	case 3:
-		return "MISS";
+		return 3;
 	case 4:
-		return "OVERLAP";
+		return 4;
 	default:
-		return "ERROR";
+		return 5;
 	}
 }
 
@@ -91,6 +91,40 @@ void Grid::printBoard() {
 				break;
 			}
 			
+		}
+		cout << endl;
+	}
+}
+
+void Grid::opponentBoard(){
+	cout << "  ";
+	for (int i = 0; i < _board[0].size(); i++) {
+		cout << " " << static_cast<char>('A' + i) << " ";
+	}
+	cout << endl;
+	for (int i = 0; i < _board.size(); i++) {
+		cout << i + 1;
+		if (i < 9)
+			cout << " ";
+		for (int j = 0; j < _board[0].size(); j++) {
+			switch (_board[i][j]) {
+			case(0):
+				cout << "|_|";
+				break;
+			case(2):
+				cout << "|X|";
+				break;
+			case(3):
+				cout << "|O|";
+				break;
+			case(4):
+				cout << "|V|";
+				break;
+			default:
+				cout << "|_|";
+				break;
+			}
+
 		}
 		cout << endl;
 	}

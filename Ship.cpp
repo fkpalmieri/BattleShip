@@ -42,7 +42,7 @@ void Ship::placeShip(Grid &g,int boat){
     char Orientation('v');
     bool Overlap = false;
     for (int i = 0; i < boat; i++) {
-        if (g.checkCoord(currPos.first, currPos.second + i) == "BOAT") {
+        if (g.checkCoord(currPos.first, currPos.second + i) == 1) {
             g.changeCoord(currPos.first, currPos.second + i, 4);
         }
         else
@@ -60,7 +60,7 @@ void Ship::placeShip(Grid &g,int boat){
                     break;
                 }
                 for (int i = 0; i < boat; i++) {
-                    if (g.checkCoord(currPos.first, currPos.second+i) == "OVERLAP") {
+                    if (g.checkCoord(currPos.first, currPos.second+i) == 4) {
                         g.changeCoord(currPos.first, currPos.second + i, 1);
                     }
                     else
@@ -68,7 +68,7 @@ void Ship::placeShip(Grid &g,int boat){
                 }
                 currPos.second--;
                 for (int i = 0; i < boat; i++) {
-                    if (g.checkCoord(currPos.first, currPos.second+i) == "BOAT") {
+                    if (g.checkCoord(currPos.first, currPos.second+i) == 1) {
                         g.changeCoord(currPos.first, currPos.second + i, 4);
                     }
                     else
@@ -82,7 +82,7 @@ void Ship::placeShip(Grid &g,int boat){
                     break;
                 }
                 for (int i = 0; i < boat; i++) {
-                    if (g.checkCoord(currPos.first, currPos.second + i) == "OVERLAP") {
+                    if (g.checkCoord(currPos.first, currPos.second + i) == 4) {
                         g.changeCoord(currPos.first, currPos.second + i, 1);
                     }
                     else
@@ -90,7 +90,7 @@ void Ship::placeShip(Grid &g,int boat){
                 }
                 currPos.second++;
                 for (int i = 0; i < boat; i++) {
-                    if (g.checkCoord(currPos.first, currPos.second + i) == "BOAT") {
+                    if (g.checkCoord(currPos.first, currPos.second + i) == 1) {
                         g.changeCoord(currPos.first, currPos.second + i, 4);
                     }
                     else
@@ -104,7 +104,7 @@ void Ship::placeShip(Grid &g,int boat){
                     break;
                 }
                 for (int i = 0; i < boat; i++) {
-                    if (g.checkCoord(currPos.first, currPos.second + i) == "OVERLAP") {
+                    if (g.checkCoord(currPos.first, currPos.second + i) == 4) {
                         g.changeCoord(currPos.first, currPos.second + i, 1);
                     }
                     else
@@ -112,7 +112,7 @@ void Ship::placeShip(Grid &g,int boat){
                 }
                 currPos.first--;
                 for (int i = 0; i < boat; i++) {
-                    if (g.checkCoord(currPos.first, currPos.second + i) == "BOAT") {
+                    if (g.checkCoord(currPos.first, currPos.second + i) == 1) {
                         g.changeCoord(currPos.first, currPos.second + i, 4);
                     }
                     else
@@ -126,7 +126,7 @@ void Ship::placeShip(Grid &g,int boat){
                     break;
                 }
                 for (int i = 0; i < boat; i++) {
-                    if (g.checkCoord(currPos.first, currPos.second + i) == "OVERLAP") {
+                    if (g.checkCoord(currPos.first, currPos.second + i) == 4) {
                         g.changeCoord(currPos.first, currPos.second + i, 1);
                     }
                     else
@@ -134,7 +134,7 @@ void Ship::placeShip(Grid &g,int boat){
                 }
                 currPos.first++;
                 for (int i = 0; i < boat; i++) {
-                    if (g.checkCoord(currPos.first, currPos.second + i) == "BOAT") {
+                    if (g.checkCoord(currPos.first, currPos.second + i) == 1) {
                         g.changeCoord(currPos.first, currPos.second + i, 4);
                     }
                     else
@@ -144,7 +144,7 @@ void Ship::placeShip(Grid &g,int boat){
                 break;
             case('r'):
                 for (int i = 0; i < boat; i++) {
-                    if (g.checkCoord(currPos.first, currPos.second + i) == "OVERLAP") {
+                    if (g.checkCoord(currPos.first, currPos.second + i) == 4) {
                         g.changeCoord(currPos.first, currPos.second + i, 1);
                     }
                     else
@@ -154,7 +154,7 @@ void Ship::placeShip(Grid &g,int boat){
                 currPos.first = 0;
                 currPos.second = 0;
                 for (int i = 0; i < boat; i++) {
-                    if (g.checkCoord(currPos.first+i, currPos.second) == "BOAT") {
+                    if (g.checkCoord(currPos.first+i, currPos.second) == 1) {
                         g.changeCoord(currPos.first+i, currPos.second, 4);
                     }
                     else
@@ -165,7 +165,7 @@ void Ship::placeShip(Grid &g,int boat){
             case('x'):
                 for (int i = 0; i < g.getHeight(); i++) {
                     for (int j = 0; j < g.getWidth(); j++) {
-                        if (g.checkCoord(j, i) == "OVERLAP") {
+                        if (g.checkCoord(j, i) == 4) {
                             system("CLS");
                             cout << "Cannot overlap boats." << endl;
                             Overlap = true;
@@ -191,7 +191,7 @@ void Ship::placeShip(Grid &g,int boat){
                     break;
                 }
                 for (int i = 0; i < boat; i++) {
-                    if (g.checkCoord(currPos.first + i, currPos.second) == "OVERLAP") {
+                    if (g.checkCoord(currPos.first + i, currPos.second) == 4) {
                         g.changeCoord(currPos.first + i, currPos.second, 1);
                     }
                     else
@@ -199,7 +199,7 @@ void Ship::placeShip(Grid &g,int boat){
                 }
                 currPos.second--;
                 for (int i = 0; i < boat; i++) {
-                    if (g.checkCoord(currPos.first + i, currPos.second) == "BOAT") {
+                    if (g.checkCoord(currPos.first + i, currPos.second) == 1) {
                         g.changeCoord(currPos.first + i, currPos.second, 4);
                     }
                     else
@@ -213,7 +213,7 @@ void Ship::placeShip(Grid &g,int boat){
                     break;
                 }
                 for (int i = 0; i < boat; i++) {
-                    if (g.checkCoord(currPos.first + i, currPos.second) == "OVERLAP") {
+                    if (g.checkCoord(currPos.first + i, currPos.second) == 4) {
                         g.changeCoord(currPos.first + i, currPos.second, 1);
                     }
                     else
@@ -221,7 +221,7 @@ void Ship::placeShip(Grid &g,int boat){
                 }
                 currPos.second++;
                 for (int i = 0; i < boat; i++) {
-                    if (g.checkCoord(currPos.first + i, currPos.second) == "BOAT") {
+                    if (g.checkCoord(currPos.first + i, currPos.second) == 1) {
                         g.changeCoord(currPos.first + i, currPos.second, 4);
                     }
                     else
@@ -235,7 +235,7 @@ void Ship::placeShip(Grid &g,int boat){
                     break;
                 }
                 for (int i = 0; i < boat; i++) {
-                    if (g.checkCoord(currPos.first + i, currPos.second) == "OVERLAP") {
+                    if (g.checkCoord(currPos.first + i, currPos.second) == 4) {
                         g.changeCoord(currPos.first + i, currPos.second, 1);
                     }
                     else
@@ -243,7 +243,7 @@ void Ship::placeShip(Grid &g,int boat){
                 }
                 currPos.first--;
                 for (int i = 0; i < boat; i++) {
-                    if (g.checkCoord(currPos.first + i, currPos.second) == "BOAT") {
+                    if (g.checkCoord(currPos.first + i, currPos.second) == 1) {
                         g.changeCoord(currPos.first + i, currPos.second, 4);
                     }
                     else
@@ -257,7 +257,7 @@ void Ship::placeShip(Grid &g,int boat){
                     break;
                 }
                 for (int i = 0; i < boat; i++) {
-                    if (g.checkCoord(currPos.first + i, currPos.second) == "OVERLAP") {
+                    if (g.checkCoord(currPos.first + i, currPos.second) == 4) {
                         g.changeCoord(currPos.first + i, currPos.second, 1);
                     }
                     else
@@ -265,7 +265,7 @@ void Ship::placeShip(Grid &g,int boat){
                 }
                 currPos.first++;
                 for (int i = 0; i < boat; i++) {
-                    if (g.checkCoord(currPos.first + i, currPos.second) == "BOAT") {
+                    if (g.checkCoord(currPos.first + i, currPos.second) == 1) {
                         g.changeCoord(currPos.first + i, currPos.second, 4);
                     }
                     else
@@ -275,7 +275,7 @@ void Ship::placeShip(Grid &g,int boat){
                 break;
             case('r'):
                 for (int i = 0; i < boat; i++) {
-                    if (g.checkCoord(currPos.first + i, currPos.second) == "OVERLAP") {
+                    if (g.checkCoord(currPos.first + i, currPos.second) == 4) {
                         g.changeCoord(currPos.first + i, currPos.second, 1);
                     }
                     else
@@ -284,7 +284,7 @@ void Ship::placeShip(Grid &g,int boat){
                 Orientation = 'v';
                 currPos.first, currPos.second = 0, 0;
                 for (int i = 0; i < boat; i++) {
-                    if (g.checkCoord(currPos.first, currPos.second + i) == "BOAT") {
+                    if (g.checkCoord(currPos.first, currPos.second + i) == 1) {
                         g.changeCoord(currPos.first, currPos.second + i, 4);
                     }
                     else
@@ -295,7 +295,7 @@ void Ship::placeShip(Grid &g,int boat){
             case('x'):
                 for (int i = 0; i < g.getHeight(); i++) {
                     for (int j = 0; j < g.getWidth(); j++) {
-                        if (g.checkCoord(j, i) == "OVERLAP") {
+                        if (g.checkCoord(j, i) == 4) {
                             system("CLS");
                             cout << "Cannot overlap boats." << endl;
                             Overlap = true;

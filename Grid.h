@@ -47,11 +47,13 @@ public:
 	void changeCoord(int x,int y,int s);
 
 	//returns either "EMPTY","BOAT","HIT", or "MISS" depending on value at given coordinates
-	string checkCoord(int x,int y);
+	int checkCoord(int x,int y);
 
 	//prints the contents of the board to the console
 	void printBoard();
 
+	//shows hits and misses
+	void opponentBoard();
 
 private:
 	//2D vector

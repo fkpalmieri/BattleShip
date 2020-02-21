@@ -5,11 +5,10 @@
 #include "Ship.h"
 
 int main() {
-    Grid g;
-    Ship k;
-    k.placeShip(g,4);
-    k.placeShip(g, 5);
-    k.placeShip(g, 2);
-    std::cout << "Hello, World!" << std::endl;
+    Battleship game;
+    while (game.Done()) {
+        game.Turn1();
+        game.Turn2();
+    }
     return 0;
 }
